@@ -108,9 +108,9 @@ public class MainComponent implements Runnable
 
     private void render()
     {
+        RenderUtil.clearScreen();
         game.render();
         window.swapBuffers();
-        RenderUtil.clearScreen();
     }
     private void cleanup()
     {

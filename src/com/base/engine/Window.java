@@ -49,10 +49,13 @@ public class Window
 
         GLFWVidMode videoMode = GLFW.glfwGetVideoMode(GLFW.glfwGetPrimaryMonitor());
         GLFW.glfwSetWindowPos(window,(videoMode.width() - width) / 2, (videoMode.height() - height) / 2);
+        GLFW.glfwMakeContextCurrent(window);
+        GL.createCapabilities();
 
         GLFW.glfwSetKeyCallback(window, input.getKeyboardCallback());
         GLFW.glfwSetCursorPosCallback(window, input.getMouseMoveCallback());
         GLFW.glfwSetMouseButtonCallback(window, input.getMouseButtonsCallback());
+
 
         GLFW.glfwShowWindow(window);
 
